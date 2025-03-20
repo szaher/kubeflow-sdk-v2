@@ -196,6 +196,7 @@ all = [
 optimizer = [
     { name = "certifi" },
     { name = "grpcio" },
+    { name = "kubeflow-training" },
     { name = "kubernetes" },
     { name = "protobuf" },
     { name = "pydantic" },
@@ -214,6 +215,7 @@ requires-dist = [
     { name = "certifi", marker = "extra == 'optimizer'", specifier = ">=14.5.14" },
     { name = "grpcio", marker = "extra == 'all'", specifier = ">=1.64.1" },
     { name = "grpcio", marker = "extra == 'optimizer'", specifier = ">=1.64.1" },
+    { name = "kubeflow-training", marker = "extra == 'optimizer'", specifier = "==1.9.0" },
     { name = "kubernetes", marker = "extra == 'all'", specifier = ">=27.2.0" },
     { name = "kubernetes", marker = "extra == 'optimizer'", specifier = ">=27.2.0" },
     { name = "kubernetes", marker = "extra == 'trainer'", specifier = ">=27.2.0" },
@@ -230,6 +232,23 @@ requires-dist = [
     { name = "urllib3", marker = "extra == 'optimizer'", specifier = ">=1.15.1" },
 ]
 provides-extras = ["optimizer", "trainer", "all"]
+
+[[package]]
+name = "kubeflow-training"
+version = "1.9.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "certifi" },
+    { name = "kubernetes" },
+    { name = "retrying" },
+    { name = "setuptools" },
+    { name = "six" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/28/46/13b6a568841795845aa432d641356acaf63328416d930b59b05b32a5eb42/kubeflow-training-1.9.0.tar.gz", hash = "sha256:b8b2fead3f0491793dbe24e6b0d7c73d4bce47bfd0c3dc362d38f620f69ec744", size = 63676 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bc/d8/216bcea878fb7b1dcb02b15e6e95564dc45003f4c6e7c241344b93fbf1f6/kubeflow_training-1.9.0-py3-none-any.whl", hash = "sha256:d2fed2d3123fb553780b0cc12d2cb8a2a591eb5e5a86022ae26c7b372e384ae8", size = 111218 },
+]
 
 [[package]]
 name = "kubernetes"
@@ -269,6 +288,7 @@ source = { editable = "kubeflow/optimizer" }
 dependencies = [
     { name = "certifi" },
     { name = "grpcio" },
+    { name = "kubeflow-training" },
     { name = "kubernetes" },
     { name = "protobuf" },
     { name = "setuptools" },
@@ -280,6 +300,7 @@ dependencies = [
 requires-dist = [
     { name = "certifi", specifier = ">=14.5.14" },
     { name = "grpcio", specifier = ">=1.64.1" },
+    { name = "kubeflow-training", specifier = "==1.9.0" },
     { name = "kubernetes", specifier = ">=27.2.0" },
     { name = "protobuf", specifier = ">=4.21.12,<5" },
     { name = "setuptools", specifier = ">=21.0.0" },
@@ -493,6 +514,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9", size = 55650 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36", size = 24179 },
+]
+
+[[package]]
+name = "retrying"
+version = "1.3.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "six" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ce/70/15ce8551d65b324e18c5aa6ef6998880f21ead51ebe5ed743c0950d7d9dd/retrying-1.3.4.tar.gz", hash = "sha256:345da8c5765bd982b1d1915deb9102fd3d1f7ad16bd84a9700b85f64d24e8f3e", size = 10929 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/04/9e36f28be4c0532c0e9207ff9dc01fb13a2b0eb036476a213b0000837d0e/retrying-1.3.4-py3-none-any.whl", hash = "sha256:8cc4d43cb8e1125e0ff3344e9de678fefd85db3b750b81b2240dc0183af37b35", size = 11602 },
 ]
 
 [[package]]
