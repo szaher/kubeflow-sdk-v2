@@ -179,13 +179,14 @@ wheels = [
 
 [[package]]
 name = "kubeflow-sdk"
-version = "0.1.8"
+version = "0.1.9"
 source = { editable = "." }
 
 [package.optional-dependencies]
 all = [
     { name = "certifi" },
     { name = "grpcio" },
+    { name = "kubeflow-training" },
     { name = "kubernetes" },
     { name = "protobuf" },
     { name = "pydantic" },
@@ -215,6 +216,7 @@ requires-dist = [
     { name = "certifi", marker = "extra == 'optimizer'", specifier = ">=14.5.14" },
     { name = "grpcio", marker = "extra == 'all'", specifier = ">=1.64.1" },
     { name = "grpcio", marker = "extra == 'optimizer'", specifier = ">=1.64.1" },
+    { name = "kubeflow-training", marker = "extra == 'all'", specifier = "==1.9.0" },
     { name = "kubeflow-training", marker = "extra == 'optimizer'", specifier = "==1.9.0" },
     { name = "kubernetes", marker = "extra == 'all'", specifier = ">=27.2.0" },
     { name = "kubernetes", marker = "extra == 'optimizer'", specifier = ">=27.2.0" },
